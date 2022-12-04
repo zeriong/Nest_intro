@@ -15,6 +15,10 @@ import { UpdateMovieDTO } from './dto/update-movie.dto';
 @Controller('movies')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
+  /* movies.module.ts에서 @Module을 사용해서 controllers와 providers에서 import시켜주었기 때문에
+  constructor(private readonly moviesService: MoviesService)와 같이 타입을 추가하는 것만으로
+  같이 사용할 수 있게 되었다. 이것을 dependency injection이라고 한다.
+   */
 
   @Get()
   getAll(): Movie[] {
